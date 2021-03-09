@@ -1,7 +1,6 @@
 package Chapter3;
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
+import java.util.Scanner;
 
 import static Extras.Utils.pause;
 
@@ -14,8 +13,8 @@ public class HelloJava {
 
         System.out.println("What is your name?");
 
-        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        String name = reader.readLine();
+        Scanner scanner = new Scanner(System.in);
+        String name = scanner.nextLine();
 
         pause(600);
 
@@ -26,6 +25,8 @@ public class HelloJava {
         pause(900);
 
         System.out.printf("Nice to meet you, %s!%n", name);
+
+        scanner.close();
     }
 
 }

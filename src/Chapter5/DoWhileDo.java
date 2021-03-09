@@ -44,7 +44,7 @@ public class DoWhileDo {
         }
     }
 
-    //Opdracht 16 e - nummer in range met check
+    //Opdracht 16 e - nummer in range (0-10) met check
     public static void numberCheck() {
         Scanner scanner = new Scanner(System.in);
         int i = -1;
@@ -55,5 +55,7 @@ public class DoWhileDo {
         } while (i < 0 || i > 10);
 
         System.out.println("Thank you for your cooperation!");
+
+        scanner.close();
     }
 }
