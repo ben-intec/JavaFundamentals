@@ -2,7 +2,8 @@ import java.util.Scanner;
 
 public class ChapterFive {
 
-    public static void task14() {
+    public static void main(String[] args) {
+
         System.out.println("Hoe oud ben je?");
         var scanner = new Scanner(System.in);
         var age = scanner.nextInt();
