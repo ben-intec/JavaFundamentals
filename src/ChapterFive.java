@@ -6,9 +6,9 @@ public class ChapterFive {
 
         var scanner = new Scanner(System.in);
 
-        getAge(scanner);
-
-        Utils.pause(2000);
+//        getAge(scanner);
+//
+//        Utils.pause(2000);
 
         getBMI(scanner);
 
@@ -38,7 +38,7 @@ public class ChapterFive {
         var height = scanner.nextFloat();
 
         var bmi = weight / (height * height);
-        var formatBmi = "met een BMI van %f heb je %s%n";
+        var formatBmi = "met een BMI van %.2f heb je %s%n";
 
         if(bmi<20) System.out.printf(formatBmi, bmi, "ondergewicht!");
         else if(bmi<25) System.out.printf(formatBmi, bmi, "een normaal gewicht!");
