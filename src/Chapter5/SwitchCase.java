@@ -25,6 +25,7 @@ public class SwitchCase {
         //check if month has a valid value
         if (month <= 0 || month > 12) {
             System.out.println("this month doesn't exist in our calendar, doofus!");
+            getDaysInMonth(scanner);
             return;
         }
 
