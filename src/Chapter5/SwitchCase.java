@@ -1,7 +1,10 @@
 package Chapter5;
 
+import java.time.Year;
+import java.util.Calendar;
 import java.util.Scanner;
 
+//Opdracht 15
 public class SwitchCase {
     public static void main(String[] args) {
         var scanner = new Scanner(System.in);
@@ -21,25 +24,24 @@ public class SwitchCase {
 
         //check if month has a valid value
         if (month <= 0 || month > 12) {
-            System.out.println("this month doesn't exist in our calendar, dufus!");
+            System.out.println("this month doesn't exist in our calendar, doofus!");
             return;
         }
 
         //count the days
-        int days;
-
-        switch (month){
-            case 2:
-                days = 28;
-                break;
-            case 4: case 6: case 9: case 11:
-                days = 30;
-                break;
-            default:
-                days = 31;
-        }
+        int days = switch (month) {
+            case 2 -> isLeapYear()? 29 : 28;
+            case 4, 6, 9, 11 -> 30;
+            default -> 31;
+        };
 
         //inform the user
         System.out.printf("In month with number %d, there are %d days", month,days);
+    }
+
+    public static boolean isLeapYear() {
+        Calendar cal = Calendar.getInstance();
+        cal.set(Calendar.YEAR, Year.now().getValue());
+        return cal.getActualMaximum(Calendar.DAY_OF_YEAR) > 365;
     }
 }
