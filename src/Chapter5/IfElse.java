@@ -8,9 +8,9 @@ public class IfElse {
 
         var scanner = new Scanner(System.in);
 
-//        getAge(scanner);
-//
-//        Utils.pause(2000);
+        getAge(scanner);
+
+        Extras.Utils.pause(2000);
 
         getBMI(scanner);
 
