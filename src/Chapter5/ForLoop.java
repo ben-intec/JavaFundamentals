@@ -51,14 +51,17 @@ public class ForLoop {
     //Opdracht 17 h - positieve priemgetallen < 1000
     public static void printPrimes() {
 
-        //Print 2 as the only even prime
-        System.out.println(2);
+        //check 2 & all uneven integers < 1000
+        for(int i = 2; i < 1000; i+= 2){
 
-        //check all uneven integers < 1000
-        for(int i = 3; i < 1000; i+= 2){
+            if(i == 2){
+                System.out.println(i--); // -- to switch to uneven numbers
+                continue;
+            }
+
             boolean isPrime = true; //assume true, check for false
 
-            //Even numbers already excluded, so mosdef not divisible by 2, start at 3
+            //Even numbers already excluded, so start at 3
             //no need to check past i/2 because result would be between 1 & 2
             for (int j = 3; j < i/2; j++){
                 if(i % j == 0) {
@@ -68,6 +71,8 @@ public class ForLoop {
             }
             if(isPrime)
                 System.out.println(i);
+
+
         }
     }
 }
