@@ -28,10 +28,16 @@ public class DoWhileDo {
 
     //Opdracht 16 c - Machten van 5 kleiner dan 10_000
     public static void powersOfFive() {
-        int i = 5;
-        while (i < 10_000){
-            System.out.println(i);
-            i *= 5;
+//        int i = 5;
+//        while (i < 10_000){
+//            System.out.println(i);
+//            i *= 5;
+//        }
+
+        int i = 0, result = 0;
+        while (result < 10_000){
+            result = (int) Math.pow(5,i++);
+            System.out.println(result);
         }
     }
 
