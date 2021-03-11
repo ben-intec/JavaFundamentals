@@ -1,7 +1,5 @@
 package Chapter5;
 
-import java.util.ArrayList;
-
 public class ForLoop {
     public static void main(String[] args) {
 //        countDown();
@@ -52,21 +50,24 @@ public class ForLoop {
 
     //Opdracht 17 h - positieve priemgetallen < 1000
     public static void printPrimes() {
-        var primes = new ArrayList<Integer>();
 
-        primes.add(2);
+        //Print 2 as the only even prime
+        System.out.println(2);
 
-        for(int i = 3; i <= 1000; i+= 2){
-            boolean isPrime = true;
+        //check all uneven integers < 1000
+        for(int i = 3; i < 1000; i+= 2){
+            boolean isPrime = true; //assume true, check for false
+
+            //Even numbers already excluded, so mosdef not divisible by 2, start at 3
+            //no need to check past i/2 because result would be between 1 & 2
             for (int j = 3; j < i/2; j++){
                 if(i % j == 0) {
                     isPrime = false;
-                    break;
+                    break; //one other factor is enough
                 }
             }
             if(isPrime)
-                primes.add(i);
+                System.out.println(i);
         }
-        primes.stream().forEach(System.out::println);
     }
 }
