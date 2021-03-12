@@ -24,15 +24,15 @@ public class Methods {
                 count++;
             }
 
-            if(i == 2) i--; //-- only check uneven numbers larger than 2
+            if (i == 2) i--;    //-- only check uneven numbers larger than 2
         }
 
-        System.out.println(count + " primes found within range!");
+        System.out.println("Found " + count + " primes smaller than or equal to " + range);
     }
 
     public static boolean isPrime(int number) {
 
-        for (int i = 2; i <= number/2; i++)
+        for (int i = 2; i < number/2; i++)     //no factors > number/2 && < number exist
             if (number % i == 0)
                 return false;
 
