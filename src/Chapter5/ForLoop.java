@@ -1,5 +1,7 @@
 package Chapter5;
 
+import java.util.ArrayList;
+
 public class ForLoop {
     public static void main(String[] args) {
 //        countDown();
@@ -51,28 +53,32 @@ public class ForLoop {
     //Opdracht 17 h - positieve priemgetallen < 1000
     public static void printPrimes() {
 
+        var primes = new ArrayList<Integer>();
         //check 2 & all uneven integers < 1000
         for(int i = 2; i < 1000; i+= 2){
 
             if(i == 2){
-                System.out.println(i--); // -- to switch to uneven numbers
+                primes.add(i--); // -- to switch to uneven numbers
                 continue;
             }
 
             boolean isPrime = true; //assume true, check for false
 
             //Even numbers already excluded, so start at 3
-            //no need to check past i/2 because result would be between 1 & 2
+            //no factors > half , so no need to check past i/2
             for (int j = 3; j < i/2; j++){
                 if(i % j == 0) {
                     isPrime = false;
                     break; //one other factor is enough
                 }
             }
-            if(isPrime)
-                System.out.println(i);
 
+            if(isPrime)
+                primes.add(i);
 
         }
+
+        System.out.printf("Numbers of primes is %s%n", primes.size());
+        primes.stream().forEach(System.out ::println);
     }
 }

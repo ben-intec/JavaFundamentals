@@ -31,7 +31,7 @@ public class SwitchCase {
 
         //count the days
         int days = switch (month) {
-            case 2 -> isLeapYear()? 29 : 28;
+            case 2 -> isLeapYear() ? 29 : 28;
             case 4, 6, 9, 11 -> 30;
             default -> 31;
         };
