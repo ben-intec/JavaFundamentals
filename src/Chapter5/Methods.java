@@ -19,7 +19,7 @@ public class Methods {
 
         int count = 0;
         for (int i = 0; i <= range; i+= 2) {
-            if(isPrime(i)) {
+            if (isPrime(i)) {
                 System.out.println(i);
                 count++;
             }
@@ -44,7 +44,7 @@ public class Methods {
         int k ;
         System.out.println("Please input top range for prime query:");
 
-        while(!scanner.hasNextInt()) {
+        while (!scanner.hasNextInt()) {
             String input = scanner.next();
             System.out.printf("\"%s\" is not a valid number.%n", input);
         }
@@ -53,7 +53,7 @@ public class Methods {
 
         while (k < 0) {
             k = scanner.nextInt();
-            System.out.printf("%d is not a valid number. Only Whole Numbers are allowed%n", k);
+            System.out.printf("%d is not a valid number. Only Whole Numbers are allowed!%n", k);
         }
 
 
