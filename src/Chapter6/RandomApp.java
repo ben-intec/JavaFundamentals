@@ -9,28 +9,39 @@ import java.util.stream.Collectors;
 public class RandomApp {
 
     public static void main(String[] args) {
+        var random = new Random();
 
-        randomGenerator();
-        randomGenerator(7,89);
-        randomGenerator(144,1087);
-        randomGenerator(14,24);
-        generateLottery();
+        randomGenerator(random, 5);
+        randomGeneratorInRange(random, 7,89);
+        randomGeneratorInRange(random, 144,1087);
+        randomGeneratorInRange(random, 14,24);
+        getLotteryNumbers(random);
+        generateLottery(random);
     }
 
-    public static void randomGenerator() {
-        var rand = new Random();
-        for (int i = 0; i < 5; )
-            System.out.printf("Random #%d: %d%n", ++i, rand.nextInt());
+    public static void randomGenerator(Random random, int count) {
+
+        for (int i = 0; i < count; )
+            System.out.printf("Random #%d: %d%n", ++i, random.nextInt());
     }
 
-    public static void randomGenerator(int origin, int bound) {
-        var rand = new Random();
+    public static void randomGeneratorInRange(Random random, int origin, int bound) {
         System.out.printf("Random within range(%d, %d): %d%n",
-                origin, bound, rand.nextInt(bound - origin) + origin);
+                origin, bound, getRandomInt(random, origin,bound));
     }
 
-    public static void generateLottery() {
-        var resultStream = new Random().ints(6,1,46);
+    public static int getRandomInt (Random random, int origin, int bound) {
+
+        return random.nextInt(bound - origin) + origin;
+    }
+
+    public static void getLotteryNumbers(Random random) {
+        for (int i = 0; i < 6; i++)
+            System.out.println("Lottery number " + (i + 1) + " is " + getRandomInt(random, 1, 46));
+    }
+
+    public static void generateLottery(Random random) {
+        var resultStream = random.ints(6,1,46);
 
         var result = resultStream.boxed().map(String::valueOf).collect(Collectors.joining(" - "));
 
