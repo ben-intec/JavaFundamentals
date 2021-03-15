@@ -5,7 +5,9 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Scanner;
 
 public class Methods {
+
     public static void main(String[] args) {
+
         var scanner = new Scanner(System.in);
 
         int range = getRangeMaximum(scanner);
@@ -18,7 +20,7 @@ public class Methods {
     public static void checkRangeForPrimes(int range) {
 
         int count = 0;
-        for (int i = 0; i <= range; i+= 2) {
+        for (int i = 2; i <= range; i += 2) {
             if (isPrime(i)) {
                 System.out.println(i);
                 count++;
@@ -27,7 +29,7 @@ public class Methods {
             if (i == 2) i--;    //-- only check uneven numbers larger than 2
         }
 
-        System.out.println("Found " + count + " primes smaller than or equal to " + range);
+        System.out.println("Found " + count + " primes within range: 0 - " + range);
     }
 
     public static boolean isPrime(int number) {
