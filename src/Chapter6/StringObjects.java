@@ -1,28 +1,15 @@
 package Chapter6;
 
+import Extras.Utils;
+
 import java.util.Random;
 import java.util.stream.Stream;
 
 public class StringObjects {
-    static final String loremIpsum = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor " +
-            "incididunt ut labore et dolore magna aliqua. Blandit volutpat maecenas volutpat blandit aliquam etiam " +
-            "erat velit. Facilisi morbi tempus iaculis urna id. Odio euismod lacinia at quis risus. Sit amet " +
-            "facilisis magna etiam tempor orci. Ac turpis egestas sed tempus urna et pharetra. Tellus in hac " +
-            "habitasse platea dictumst vestibulum rhoncus est. Dignissim suspendisse in est ante in nibh mauris " +
-            "cursus mattis. Augue neque gravida in fermentum et sollicitudin ac orci. Hendrerit dolor magna eget " +
-            "est. Molestie at elementum eu facilisis sed. Laoreet non curabitur gravida arcu ac tortor dignissim " +
-            "convallis aenean. Viverra maecenas accumsan lacus vel facilisis volutpat est velit egestas. Nunc " +
-            "congue nisi vitae suscipit tellus mauris a diam maecenas. In pellentesque massa placerat duis " +
-            "ultricies lacus sed turpis. Lectus magna fringilla urna porttitor rhoncus dolor purus.";
-
 
     public static void main(String[] args) {
-        var sentences = Stream.of(loremIpsum.split("\\.")).map(s -> s.trim().concat(".")).toArray(String[]::new);
-//        for (int i = 0; i < sentences.length; i++) {
-//            System.out.printf("%d. %s%n", i+1, sentences[i]);
-//        }
 
-        var string1 = getRandomString(sentences);
+        var string1 = Utils.getRandomString();
         printStringAndLength(string1);
         System.out.println();
         printAllCaps(string1);
@@ -36,14 +23,14 @@ public class StringObjects {
 
         String string2;
         do {
-            string2 = getRandomString(sentences);
+            string2 = Utils.getRandomString();
         } while (string1.equals(string2));
 
         compareStrings(string1,string2);
         System.out.println();
         sortStringsAlphabetically(string1, string2);
 
-        String string3 = addSpaces(getRandomString(sentences));
+        String string3 = addSpaces(Utils.getRandomString());
 
         System.out.println();
         printTrimmedString(string3);
@@ -93,9 +80,9 @@ public class StringObjects {
 
     // order strings alphabetically
     public static void sortStringsAlphabetically(String s1, String s2) {
-        if (s1.compareTo(s2) < 0)
+        if (s1.compareToIgnoreCase(s2) < 0)
             System.out.printf("%s%n%s%n", s1, s2);
-        else if (s1.compareTo(s2) > 0)
+        else if (s1.compareToIgnoreCase(s2) > 0)
             System.out.printf("%s%n%s%n", s2, s1);
         else compareStrings(s1, s2);
     }
