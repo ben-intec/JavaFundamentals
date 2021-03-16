@@ -35,6 +35,7 @@ public class StringObjects {
         System.out.println();
         printTrimmedString(string3);
 
+
     }
 
     public static String getRandomString(String[] stringArray) {
