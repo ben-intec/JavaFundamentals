@@ -18,7 +18,7 @@ public class GreatestCommonDenominator {
         System.out.printf("The greatest common denominator of %d and %d is %d", a, b, c);
     }
 
-    static int greatestCommonDenominator(int number1, int number2) {
+    public static int greatestCommonDenominator(int number1, int number2) {
         int big = Math.max(number1, number2);
         int small = Math.min(number1, number2);
 

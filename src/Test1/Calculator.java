@@ -22,12 +22,12 @@ public class Calculator {
         var scanner = new Scanner(System.in);
         var operator = requestOperation(scanner);
         var number1 = requestNumber(scanner);
-        int number2 = 0;
+        int number2 = requestNumber(scanner);
 
         //don't accept 0 in case of division
-        do {
+        while (isInvalid(operator,number2)) {
             number2 = requestNumber(scanner, "0 is not allowed in this case");
-        } while (isInvalid(operator,number2));
+        }
 
         var formatter = new Formatter();
         String format = "%d %s %d = %d";
