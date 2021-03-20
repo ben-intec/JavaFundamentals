@@ -12,7 +12,7 @@ public class InputRequests {
 
     //INTEGERS
     /**
-     * Method that request input from the user and only returns a value when input matches desired conditions
+     * Method that request input from the user and only returns that value
      *
      * @param scanner   The Scanner object that is used to read the console for user input.
      * @param request   The string requesting the user for input.
@@ -71,7 +71,7 @@ public class InputRequests {
 
     //LONGS
     /**
-     * Method that request input from the user and only returns a value when input matches desired conditions
+     * Method that request input from the user and only returns that value
      *
      * @param scanner   The Scanner object that is used to read the console for user input.
      * @param request   The string requesting the user for input.
@@ -130,7 +130,7 @@ public class InputRequests {
 
     //DOUBLES
     /**
-     * Method that request input from the user and only returns a value when input matches desired conditions
+     * Method that request input from the user and only returns that value
      *
      * @param scanner   The Scanner object that is used to read the console for user input.
      * @param request   The string requesting the user for input.
@@ -189,7 +189,7 @@ public class InputRequests {
 
     //DOUBLES
     /**
-     * Method that request input from the user and only returns a value when input matches desired conditions
+     * Method that request input from the user and only returns that value
      *
      * @param scanner   The Scanner object that is used to read the console for user input.
      * @param request   The string requesting the user for input.
@@ -248,7 +248,7 @@ public class InputRequests {
 
     //STRINGS
     /**
-     * Method that request input from the user and only returns a value when input matches desired conditions
+     * Method that request input from the user and returns that value
      *
      * @param scanner   The Scanner object that is used to read the console for user input.
      * @param request   The string requesting the user for input.

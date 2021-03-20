@@ -1,5 +1,6 @@
 package Chapter5;
 
+import Tools.InputRequests;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Scanner;
@@ -10,7 +11,11 @@ public class Methods {
 
         var scanner = new Scanner(System.in);
 
-        int range = getRangeMaximum(scanner);
+        int range = InputRequests.requestInt(
+                scanner,
+                "Please input top range for prime query:",
+                i -> i > 0,
+                "Only Whole Numbers are allowed!");
 
         checkRangeForPrimes(range);
 
@@ -39,26 +44,5 @@ public class Methods {
                 return false;
 
         return number > 1;
-    }
-
-    public static int getRangeMaximum(@NotNull Scanner scanner) {
-
-        int k ;
-        System.out.println("Please input top range for prime query:");
-
-        while (!scanner.hasNextInt()) {
-            String input = scanner.next();
-            System.out.printf("\"%s\" is not a valid number.%n", input);
-        }
-
-        k = scanner.nextInt();
-
-        while (k < 0) {
-            k = scanner.nextInt();
-            System.out.printf("%d is not a valid number. Only Whole Numbers are allowed!%n", k);
-        }
-
-
-        return k;
     }
 }

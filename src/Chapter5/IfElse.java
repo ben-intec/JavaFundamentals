@@ -1,5 +1,7 @@
 package Chapter5;
 
+import Tools.InputRequests;
+
 import java.util.Scanner;
 
 public class IfElse {
@@ -21,18 +23,16 @@ public class IfElse {
     public static void getAge(Scanner scanner) {
 
         //get user age
-        System.out.println("Hoe oud ben je?");
-
-        var age = scanner.nextInt();
+        var age = InputRequests.requestInt(scanner,"Hoe oud ben je?");
 
         //inform user
         var format = "je bent een %s%n";
 
-        if (age<2)
+        if (age < 2)
             System.out.printf(format,"baby");
-        else if (age<10)
+        else if (age < 10)
             System.out.printf(format,"kind");
-        else if (age<20)
+        else if (age < 20)
             System.out.printf(format,"tiener");
         else
             System.out.printf(format,"Volwassene");
@@ -42,12 +42,10 @@ public class IfElse {
     //Opdracht 14 b
     public static void getBMI(Scanner scanner) {
         //get user weight
-        System.out.println("Hoeveel weeg je? (in kg)");
-        var weight = scanner.nextFloat();
+        var weight = InputRequests.requestFloat(scanner,"Hoeveel weeg je? (in kg)");
 
         //get user height
-        System.out.println("Hoe groot ben je? (in m)");
-        var height = scanner.nextFloat();
+        var height = InputRequests.requestFloat(scanner, "Hoe groot ben je? (in m)");
 
         //calculate user BMI
         var bmi = weight / (height * height);

@@ -9,14 +9,19 @@ public class StringObjects {
     public static void main(String[] args) {
 
         var string1 = Utils.getRandomString();
+
         printStringAndLength(string1);
         System.out.println();
+
         printAllCaps(string1);
         System.out.println();
+
         printAllLowerCase(string1);
         System.out.println();
+
         printReplaceAWithO(string1);
         System.out.println();
+
         countE(string1);
         System.out.println();
 
@@ -27,11 +32,12 @@ public class StringObjects {
 
         compareStrings(string1,string2);
         System.out.println();
+
         sortStringsAlphabetically(string1, string2);
+        System.out.println();
 
         String string3 = addSpaces(Utils.getRandomString());
 
-        System.out.println();
         printTrimmedString(string3);
 
 
