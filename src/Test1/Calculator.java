@@ -80,7 +80,7 @@ public class Calculator {
     public static float fraction(int a, int b) {
         return a / (float) b;
     }
-    
+
 
     //don't divide by 0
     public static boolean isInvalid(String operator, int number) {
