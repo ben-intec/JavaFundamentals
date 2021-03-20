@@ -29,27 +29,26 @@ public class Calculator {
             number2 = requestNumber(scanner, "0 is not allowed in this case");
         }
 
-        var formatter = new Formatter();
+        System.out.println(getResult(operator, number1, number2));
+        scanner.close();
+    }
+
+    public static String getResult(String operator, int number1, int number2) {
+
         String format = "%d %s %d = %d";
+
         switch (operator){
             case "+":
-                formatter.format(format, number1, operator, number2, sum(number1,number2));
-                break;
+                return String.format(format, number1, operator, number2, sum(number1,number2));
             case "-":
-                formatter.format(format, number1, operator, number2, diff(number1,number2));
-                break;
+                return String.format(format, number1, operator, number2, diff(number1,number2));
             case "/":
-                formatter.format("%d %s %d = %.2f", number1, operator, number2, fraction(number1,number2));
-                break;
+                return String.format("%d %s %d = %.2f", number1, operator, number2, fraction(number1,number2));
             case "*":
-                formatter.format(format, number1, operator, number2, product(number1,number2));
-                break;
+                return String.format(format, number1, operator, number2, product(number1,number2));
             default:
-                System.out.println("I sense a disturbance in the Force!");
+                return "I sense a disturbance in the Force!";
         }
-
-        System.out.println(formatter.toString());
-        scanner.close();
     }
 
     //OPERATIONS
@@ -103,7 +102,6 @@ public class Calculator {
 
     //don't divide by 0
     public static boolean isInvalid(String operator, int number) {
-
         return operator.equals("/") && number ==0;
     }
 

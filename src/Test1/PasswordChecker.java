@@ -19,7 +19,7 @@ public class PasswordChecker {
 
         var scanner = new Scanner(System.in);
 
-        requestPassword(scanner, "Please input a password worhty of the Jedi");
+        requestPassword(scanner, "Please input a password worthy of the Jedi");
 
         scanner.close();
     }
@@ -30,9 +30,17 @@ public class PasswordChecker {
         String password = scanner.nextLine();
 
         var has16 = password.length() > 15;
-        var hasLowerCase = password.matches("^.*[a-z]+.*$");
-        var hasUpperCase = password.matches("^.*[A-Z]+.*$");
-        var hasSpecial = password.matches("^.*[!\"#$%&'()*+,-./:;<=>?@\\[\\]^_`{|}~]+.*$");
+//        var hasLowerCase = password.matches("^.*[a-z]+.*$");
+//        var hasUpperCase = password.matches("^.*[A-Z]+.*$");
+//        var hasSpecial = password.matches("^.*[!\"#$%&'()*+,-./:;<=>?@\\[\\]^_`{|}~]+.*$");
+
+        var hasLowerCase = password.chars().anyMatch(Character::isLowerCase);
+        var hasUpperCase = password.chars().anyMatch(Character::isUpperCase);
+//        var hasNumber = password.chars().anyMatch(Character::isDigit);
+        var hasSpecial = !password.chars()
+                .filter(c -> !(Character.isWhitespace(c) || Character.isSupplementaryCodePoint(c)))
+                .allMatch(Character::isLetterOrDigit);
+
 
         if (!has16)
             requestPassword(scanner, "Password needs to contain a minimum of 16 characters");
