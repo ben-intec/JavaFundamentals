@@ -1,4 +1,4 @@
-package Extras;
+package Tools;
 
 import java.util.Random;
 import java.util.concurrent.TimeUnit;

@@ -1,6 +1,13 @@
 package Test1;
 
+import Tools.InputRequests;
+
+import java.util.AbstractMap;
+import java.util.Map;
 import java.util.Scanner;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 /*
     (5) Schrijf een programma dat een paswoord vraagt als input (een String)
@@ -26,21 +33,14 @@ public class PasswordChecker {
 
     public static void requestPassword(Scanner scanner, String message) {
 
-        System.out.println(message);
-        String password = scanner.nextLine();
+        String password = InputRequests.requestString(scanner, message);
 
         var has16 = password.length() > 15;
-//        var hasLowerCase = password.matches("^.*[a-z]+.*$");
-//        var hasUpperCase = password.matches("^.*[A-Z]+.*$");
-//        var hasSpecial = password.matches("^.*[!\"#$%&'()*+,-./:;<=>?@\\[\\]^_`{|}~]+.*$");
-
         var hasLowerCase = password.chars().anyMatch(Character::isLowerCase);
         var hasUpperCase = password.chars().anyMatch(Character::isUpperCase);
-//        var hasNumber = password.chars().anyMatch(Character::isDigit);
         var hasSpecial = !password.chars()
                 .filter(c -> !(Character.isWhitespace(c) || Character.isSupplementaryCodePoint(c)))
                 .allMatch(Character::isLetterOrDigit);
-
 
         if (!has16)
             requestPassword(scanner, "Password needs to contain a minimum of 16 characters");
@@ -49,7 +49,7 @@ public class PasswordChecker {
         else if (!hasUpperCase)
             requestPassword(scanner, "Password needs to contain at least one upper case character");
         else if (!hasSpecial)
-            requestPassword(scanner, "Password needs to contain at least one special character !\"#$%&'()*+,-./:;<=>?@\\[\\]^_`{|}~]+$");
+            requestPassword(scanner, "Password needs to contain at least one special character !,#,$,%,&,etc.");
         else
             System.out.println("Well done Young Padawan, that is a strong password!");
     }

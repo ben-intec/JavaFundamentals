@@ -1,6 +1,6 @@
 package Chapter6;
 
-import Extras.Utils;
+import Tools.Utils;
 
 import java.util.stream.Collectors;
 

@@ -1,5 +1,7 @@
 package Test1;
 
+import Tools.InputRequests;
+
 import java.util.Scanner;
 
 /*
@@ -14,9 +16,8 @@ import java.util.Scanner;
 public class LeetUsername {
     public static void main(String[] args) {
         var scanner = new Scanner(System.in);
-        System.out.println("What is your name?");
 
-        String name = scanner.nextLine();
+        String name = InputRequests.requestString(scanner, "Please input your name:");
 
 
         System.out.printf("Hallo %s.%n", getLeetName(name));
@@ -26,6 +27,16 @@ public class LeetUsername {
 
     public static String getLeetName(String name) {
 
-        return name.replaceAll("(?i)o","0").replaceAll("(?i)e","3").replaceAll("(?i)s","5");
+        return name
+                .replaceAll("(?i)o","0")
+                .replaceAll("(?i)i","1")
+                .replaceAll("(?i)z","2")
+                .replaceAll("(?i)e","3")
+                .replaceAll("(?i)A","4")
+                .replaceAll("(?i)s","5")
+                .replaceAll(    "G","6")
+                .replaceAll("(?i)t","7")
+                .replaceAll("(?i)b","8")
+                .replaceAll(    "g","9");
     }
 }

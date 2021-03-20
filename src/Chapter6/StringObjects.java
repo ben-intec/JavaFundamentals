@@ -1,9 +1,8 @@
 package Chapter6;
 
-import Extras.Utils;
+import Tools.Utils;
 
 import java.util.Random;
-import java.util.stream.Stream;
 
 public class StringObjects {
 

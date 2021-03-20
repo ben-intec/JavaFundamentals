@@ -10,7 +10,7 @@ public class IfElse {
 
         getAge(scanner);
 
-        Extras.Utils.pause(2000);
+        Tools.Utils.pause(2000);
 
         getBMI(scanner);
 

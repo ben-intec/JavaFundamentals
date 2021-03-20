@@ -1,6 +1,7 @@
 package Test1;
 
-import java.util.Formatter;
+import Tools.InputRequests;
+
 import java.util.Scanner;
 
 /*
@@ -20,22 +21,33 @@ public class Calculator {
     public static void main(String[] args) {
 
         var scanner = new Scanner(System.in);
-        var operator = requestOperation(scanner);
-        var number1 = requestNumber(scanner);
-        int number2 = requestNumber(scanner);
 
-        //don't accept 0 in case of division
-        while (isInvalid(operator,number2)) {
-            number2 = requestNumber(scanner, "0 is not allowed in this case");
-        }
+        var operatorRequest = "Please input an operation: + ,  - ,  *  or  /";
+        var numberRequest = "Please input a real number";
+
+        var operator = InputRequests.requestString(
+                scanner,
+                operatorRequest,
+                opr -> opr.length() == 1 && opr.matches("[-+/*]+"));
+
+        var number1 = InputRequests.requestInt(
+                scanner,
+                numberRequest);
+
+        var number2 = InputRequests.requestInt(
+                scanner,
+                numberRequest,
+                i -> !isInvalid(operator,i),
+                "0 is not allowed in this case");
 
         System.out.println(getResult(operator, number1, number2));
+
         scanner.close();
     }
 
     public static String getResult(String operator, int number1, int number2) {
 
-        String format = "%d %s %d = %d";
+        var format = "%d %s %d = %d";
 
         switch (operator){
             case "+":
@@ -68,37 +80,7 @@ public class Calculator {
     public static float fraction(int a, int b) {
         return a / (float) b;
     }
-
-    //INPUT REQUESTS
-
-    public static String requestOperation(Scanner scanner) {
-
-        String operator = "";
-        do {
-            System.out.println("Please input an operation: + ,  - ,  *  or  /");
-            operator = scanner.nextLine();
-        } while (operator.length() != 1 || !operator.matches("[-+/*]+"));
-
-        return operator;
-    }
-
-    public static int requestNumber(Scanner scanner) {
-        return requestNumber(scanner, "Please input a real number");
-    }
-
-    public static int requestNumber(Scanner scanner, String message){
-
-        int number ;
-        System.out.println(message);
-
-        while(!scanner.hasNextInt()) {
-            String input = scanner.next();
-            System.out.printf("\"%s\" is not a valid number. Please try again!%n", input);
-        }
-
-        number = scanner.nextInt();
-        return number;
-    }
+    
 
     //don't divide by 0
     public static boolean isInvalid(String operator, int number) {

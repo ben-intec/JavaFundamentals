@@ -2,7 +2,7 @@ package Chapter3;
 import java.io.IOException;
 import java.util.Scanner;
 
-import static Extras.Utils.pause;
+import static Tools.Utils.pause;
 
 public class HelloJava {
     public static void main(String[] args) throws IOException {
