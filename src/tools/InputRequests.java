@@ -1,52 +1,55 @@
-package Tools;
+package tools;
+
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Scanner;
 import java.util.function.Predicate;
-
+/**
+ * InputRequests is a helper class to ask for input from the user via the console.
+ *
+ * @author  Benjamin A.C. Desmedt
+ * @version 1.2
+ * @since   2021-03-20
+ */
 public class InputRequests {
-    public static void main(String[] args) {
-        int number = requestInt(new Scanner(System.in),"input number greater than 20", i -> i > 20, "try again");
-
-        System.out.println(number);
-    }
 
     //INTEGERS
     /**
-     * Method that request input from the user and only returns that value
+     * Method that requests an integer from the user and repeats request until user inputs a valid integer
      *
      * @param scanner   The Scanner object that is used to read the console for user input.
      * @param request   The string requesting the user for input.
      *
-     * @return  The requested value
+     * @return  An integer
      */
-    public static int requestInt(Scanner scanner, String request) {
+    public static int requestInt(@NotNull Scanner scanner, @NotNull String request) {
         return requestInt(scanner, request, null);
     }
 
     /**
-     * Method that request input from the user and only returns a value when input matches desired conditions
+     * Method that requests an integer from the user and repeats request until user inputs a value matching conditions defined by the Predicate
      *
      * @param scanner   The Scanner object that is used to read the console for user input.
      * @param request   The string requesting the user for input. Repeated if predicate returns false.
-     * @param predicate The predicate that tests whether the input meets desired conditions.
+     * @param predicate The Predicate that tests whether the input meets desired conditions.
      *
-     * @return  The requested value
+     * @return  An integer validated by the Predicate
      */
-    public static int requestInt(Scanner scanner, String request, Predicate<Integer> predicate) {
+    public static int requestInt(@NotNull Scanner scanner, @NotNull String request, Predicate<Integer> predicate) {
         return requestInt(scanner, request, predicate, request);
     }
 
     /**
-     * Method that request input from the user and only returns a value when input matches desired conditions
+     * Method that requests an integer from the user and repeats request with an error message until user inputs a value matching conditions defined by the Predicate
      *
      * @param scanner   The Scanner object that is used to read the console for user input.
      * @param request   The string requesting the user for input.
-     * @param predicate The predicate that tests whether the input meets desired conditions.
+     * @param predicate The Predicate that tests whether the input meets desired conditions.
      * @param errorMessage  The message displayed in case predicate returns false.
      *
-     * @return  The requested value
+     * @return  An integer validated by the Predicate
      */
-    public static int requestInt(Scanner scanner, String request, Predicate<Integer> predicate, String errorMessage){
+    public static int requestInt(@NotNull Scanner scanner, @NotNull String request, Predicate<Integer> predicate, String errorMessage){
 
         int number ;
         System.out.println(request);
@@ -71,41 +74,41 @@ public class InputRequests {
 
     //LONGS
     /**
-     * Method that request input from the user and only returns that value
+     * Method that requests a long from the user and repeats request until user inputs a valid value
      *
      * @param scanner   The Scanner object that is used to read the console for user input.
      * @param request   The string requesting the user for input.
      *
-     * @return  The requested value
+     * @return  A long
      */
-    public static long requestLong(Scanner scanner, String request) {
+    public static long requestLong(@NotNull Scanner scanner, @NotNull String request) {
         return requestLong(scanner, request, null);
     }
 
     /**
-     * Method that request input from the user and only returns a value when input matches desired conditions
+     * Method that requests a long from the user and repeats request until user inputs a value matching conditions defined by the Predicate
      *
      * @param scanner   The Scanner object that is used to read the console for user input.
      * @param request   The string requesting the user for input. Repeated if predicate returns false.
-     * @param predicate The predicate that tests whether the input meets desired conditions.
+     * @param predicate The Predicate that tests whether the input meets desired conditions.
      *
-     * @return  The requested value
+     * @return  A long validated by the Predicate
      */
-    public static long requestLong(Scanner scanner, String request, Predicate<Long> predicate) {
+    public static long requestLong(@NotNull Scanner scanner, @NotNull String request, Predicate<Long> predicate) {
         return requestLong(scanner, request, predicate, request);
     }
 
     /**
-     * Method that request input from the user and only returns a value when input matches desired conditions
+     * Method that requests a long from the user and repeats request with an error message until user inputs a value matching conditions defined by the Predicate
      *
      * @param scanner   The Scanner object that is used to read the console for user input.
      * @param request   The string requesting the user for input.
-     * @param predicate The predicate that tests whether the input meets desired conditions.
+     * @param predicate The Predicate that tests whether the input meets desired conditions.
      * @param errorMessage  The message displayed in case predicate returns false.
      *
-     * @return  The requested value
+     * @return  A long validated by the Predicate
      */
-    public static long requestLong(Scanner scanner, String request, Predicate<Long> predicate, String errorMessage){
+    public static long requestLong(@NotNull Scanner scanner, @NotNull String request, Predicate<Long> predicate, String errorMessage){
 
         long number ;
         System.out.println(request);
@@ -130,41 +133,41 @@ public class InputRequests {
 
     //DOUBLES
     /**
-     * Method that request input from the user and only returns that value
+     * Method that requests a double from the user and repeats request until user inputs a valid value
      *
      * @param scanner   The Scanner object that is used to read the console for user input.
      * @param request   The string requesting the user for input.
      *
-     * @return  The requested value
+     * @return  A double
      */
-    public static double requestDouble(Scanner scanner, String request) {
+    public static double requestDouble(@NotNull Scanner scanner, @NotNull String request) {
         return requestDouble(scanner, request, null);
     }
 
     /**
-     * Method that request input from the user and only returns a value when input matches desired conditions
+     * Method that requests a double from the user and repeats request until user inputs a value matching conditions defined by the Predicate
      *
      * @param scanner   The Scanner object that is used to read the console for user input.
      * @param request   The string requesting the user for input. Repeated if predicate returns false.
-     * @param predicate The predicate that tests whether the input meets desired conditions.
+     * @param predicate The Predicate that tests whether the input meets desired conditions.
      *
-     * @return  The requested value
+     * @return  A double validated by the Predicate
      */
-    public static double requestDouble(Scanner scanner, String request, Predicate<Double> predicate) {
+    public static double requestDouble(@NotNull Scanner scanner, @NotNull String request, Predicate<Double> predicate) {
         return requestDouble(scanner, request, predicate, request);
     }
 
     /**
-     * Method that request input from the user and only returns a value when input matches desired conditions
+     * Method that requests a double from the user and repeats request with an error message until user inputs a value matching conditions defined by the Predicate
      *
      * @param scanner   The Scanner object that is used to read the console for user input.
      * @param request   The string requesting the user for input.
-     * @param predicate The predicate that tests whether the input meets desired conditions.
+     * @param predicate The Predicate that tests whether the input meets desired conditions.
      * @param errorMessage  The message displayed in case predicate returns false.
      *
-     * @return  The requested value
+     * @return  A double validated by the Predicate
      */
-    public static double requestDouble(Scanner scanner, String request, Predicate<Double> predicate, String errorMessage){
+    public static double requestDouble(@NotNull Scanner scanner, @NotNull String request, Predicate<Double> predicate, String errorMessage){
 
         double number ;
         System.out.println(request);
@@ -189,41 +192,41 @@ public class InputRequests {
 
     //DOUBLES
     /**
-     * Method that request input from the user and only returns that value
+     * Method that requests a float from the user and repeats request until user inputs a valid value
      *
      * @param scanner   The Scanner object that is used to read the console for user input.
      * @param request   The string requesting the user for input.
      *
-     * @return  The requested value
+     * @return  A float
      */
-    public static float requestFloat(Scanner scanner, String request) {
+    public static float requestFloat(@NotNull Scanner scanner, @NotNull String request) {
         return requestFloat(scanner, request, null);
     }
 
     /**
-     * Method that request input from the user and only returns a value when input matches desired conditions
+     * Method that requests a float from the user and repeats request until user inputs a value matching conditions defined by the Predicate
      *
      * @param scanner   The Scanner object that is used to read the console for user input.
      * @param request   The string requesting the user for input. Repeated if predicate returns false.
-     * @param predicate The predicate that tests whether the input meets desired conditions.
+     * @param predicate The Predicate that tests whether the input meets desired conditions.
      *
-     * @return  The requested value
+     * @return  A float validated by the Predicate
      */
-    public static float requestFloat(Scanner scanner, String request, Predicate<Float> predicate) {
+    public static float requestFloat(@NotNull Scanner scanner, @NotNull String request, Predicate<Float> predicate) {
         return requestFloat(scanner, request, predicate, request);
     }
 
     /**
-     * Method that request input from the user and only returns a value when input matches desired conditions
+     * Method that requests a float from the user and repeats request with an error message until user inputs a value matching conditions defined by the Predicate
      *
      * @param scanner   The Scanner object that is used to read the console for user input.
      * @param request   The string requesting the user for input.
-     * @param predicate The predicate that tests whether the input meets desired conditions.
+     * @param predicate The Predicate that tests whether the input meets desired conditions.
      * @param errorMessage  The message displayed in case predicate returns false.
      *
-     * @return  The requested value
+     * @return  A float validated by the Predicate
      */
-    public static float requestFloat(Scanner scanner, String request, Predicate<Float> predicate, String errorMessage){
+    public static float requestFloat(@NotNull Scanner scanner, @NotNull String request, Predicate<Float> predicate, String errorMessage){
 
         float number ;
         System.out.println(request);
@@ -248,41 +251,41 @@ public class InputRequests {
 
     //STRINGS
     /**
-     * Method that request input from the user and returns that value
+     * Method that request a string from the user and returns that value
      *
      * @param scanner   The Scanner object that is used to read the console for user input.
      * @param request   The string requesting the user for input.
      *
-     * @return  The requested value
+     * @return  A string
      */
-    public static String requestString(Scanner scanner, String request) {
+    public static String requestString(@NotNull Scanner scanner, @NotNull String request) {
         return requestString(scanner, request, null);
     }
 
     /**
-     * Method that request input from the user and only returns a value when input matches desired conditions
+     * Method that requests a string from the user and repeats request until user inputs a value matching conditions defined by the Predicate
      *
      * @param scanner   The Scanner object that is used to read the console for user input.
      * @param request   The string requesting the user for input. Repeated if predicate returns false.
-     * @param predicate The predicate that tests whether the input meets desired conditions.
+     * @param predicate The Predicate that tests whether the input meets desired conditions.
      *
-     * @return  The requested value
+     * @return  A string validated by the Predicate
      */
-    public static String requestString(Scanner scanner, String request, Predicate<String> predicate) {
+    public static String requestString(@NotNull Scanner scanner, @NotNull String request, Predicate<String> predicate) {
         return requestString(scanner, request, predicate, request);
     }
 
     /**
-     * Method that request input from the user and only returns a value when input matches desired conditions
+     * Method that requests a string from the user and repeats request with an error message until user inputs a value matching conditions defined by the Predicate
      *
      * @param scanner   The Scanner object that is used to read the console for user input.
      * @param request   The string requesting the user for input.
-     * @param predicate The predicate that tests whether the input meets desired conditions.
+     * @param predicate The Predicate that tests whether the input meets desired conditions.
      * @param errorMessage  The message displayed in case predicate returns false.
      *
-     * @return  The requested value
+     * @return  A string validated by the Predicate
      */
-    public static String requestString(Scanner scanner, String request, Predicate<String> predicate, String errorMessage) {
+    public static String requestString(@NotNull Scanner scanner, @NotNull String request, Predicate<String> predicate, String errorMessage) {
         String result;
 
         System.out.println(request);

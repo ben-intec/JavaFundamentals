@@ -1,4 +1,4 @@
-package Chapter6;
+package chapter6;
 
 import java.util.Random;
 import java.util.stream.Collectors;

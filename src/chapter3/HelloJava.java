@@ -1,8 +1,8 @@
-package Chapter3;
+package chapter3;
 import java.io.IOException;
 import java.util.Scanner;
 
-import static Tools.Utils.pause;
+import static tools.Utils.pause;
 
 public class HelloJava {
     public static void main(String[] args) throws IOException {

@@ -1,6 +1,6 @@
-package Test1;
+package test1;
 
-import Tools.InputRequests;
+import tools.InputRequests;
 
 import java.util.Scanner;
 

@@ -1,4 +1,4 @@
-package Test1;
+package test1;
 
 /*
     (1) Schrijf een programma dat alle getallen van 0 tot 10_000 afdrukt die voldoen aan de volgende voorwaarden:

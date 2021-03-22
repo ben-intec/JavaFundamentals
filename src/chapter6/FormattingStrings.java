@@ -1,4 +1,4 @@
-package Chapter6;
+package chapter6;
 //Opdracht 5
 public class FormattingStrings {
     public static void main(String[] args) {

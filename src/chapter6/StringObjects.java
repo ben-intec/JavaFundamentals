@@ -1,6 +1,6 @@
-package Chapter6;
+package chapter6;
 
-import Tools.Utils;
+import tools.Utils;
 
 import java.util.Random;
 

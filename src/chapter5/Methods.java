@@ -1,7 +1,6 @@
-package Chapter5;
+package chapter5;
 
-import Tools.InputRequests;
-import org.jetbrains.annotations.NotNull;
+import tools.InputRequests;
 
 import java.util.Scanner;
 

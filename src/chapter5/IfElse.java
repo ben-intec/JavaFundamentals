@@ -1,6 +1,6 @@
-package Chapter5;
+package chapter5;
 
-import Tools.InputRequests;
+import tools.InputRequests;
 
 import java.util.Scanner;
 
@@ -12,7 +12,7 @@ public class IfElse {
 
         getAge(scanner);
 
-        Tools.Utils.pause(2000);
+        tools.Utils.pause(2000);
 
         getBMI(scanner);
 

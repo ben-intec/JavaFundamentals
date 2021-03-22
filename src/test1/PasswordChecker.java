@@ -1,13 +1,8 @@
-package Test1;
+package test1;
 
-import Tools.InputRequests;
+import tools.InputRequests;
 
-import java.util.AbstractMap;
-import java.util.Map;
 import java.util.Scanner;
-import java.util.function.Predicate;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 /*
     (5) Schrijf een programma dat een paswoord vraagt als input (een String)
@@ -35,6 +30,7 @@ public class PasswordChecker {
 
         String password = InputRequests.requestString(scanner, message);
 
+        //single regex check "^(?=.*?[a-z])(?=.*?[0-9])(?=.*?[A-Z]).{16}$"
         var has16 = password.length() > 15;
         var hasLowerCase = password.chars().anyMatch(Character::isLowerCase);
         var hasUpperCase = password.chars().anyMatch(Character::isUpperCase);
