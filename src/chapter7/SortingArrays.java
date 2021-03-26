@@ -1,75 +1,63 @@
 package chapter7;
 
+import java.util.Arrays;
+import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
+
 //Opdracht 1 optioneel 3
 public class SortingArrays {
 
     public static void main(String[] args) {
 
-        int[] ints = {5,9,22,1,37,42,6,23,99,3,14,21,88,8};
-//        int[] ints = {5,9,22,1,37,42};
-        printInts("\nUnsorted:", ints);
+        int[] ints = { 5, 9, 22, 1, 37, 42, 6, 23, 99, 3, 14, 21, 88, 8 };
+        int[] copy = ints.clone();
+        System.out.printf("\nUnsorted:      \t%s", Arrays.toString(ints));
 
-        int[] intSelectionSorted = sortedSelection(ints);
-        printInts("\nSelection Sort:", intSelectionSorted);
+        long startTime = System.nanoTime();
+        selectionSortArray(ints);
+        System.out.printf("\nSelection Sort:\t%s\t took %d ns", Arrays.toString(ints), System.nanoTime() - startTime);
 
-        int[] intBubbleSorted = sortedBubble(ints);
-        printInts("\nBubble Sort:", intBubbleSorted);
 
+        System.out.printf("\n\nUnsorted:      \t%s", Arrays.toString(copy));
+
+        startTime = System.nanoTime();
+        bubbleSortArray(copy);
+        System.out.printf("\nBubble Sort:   \t%s\t took %d ns", Arrays.toString(copy), System.nanoTime() - startTime);
     }
 
-    public static int[] sortedBubble(int[] arr) {
+    public static void bubbleSortArray(int[] array) {
 
-        boolean noChanges;
-
+        boolean isSorted;
         do {
-            noChanges = true;
-            for (int i = 0; i < arr.length -1; i++) {
+            isSorted = true;
+            for (int i = 0; i < array.length - 1; i++) {
 
-                if(arr[i] > arr[i+1]){
+                if (array[i] > array[i + 1]) {
+                    isSorted = false;
 
-                    int x = arr[i];
-                    arr[i] = arr[i+1];
-                    arr[i+1] = x;
-                    noChanges = false;
+                    int temp = array[i];
+                    array[i] = array[i + 1];
+                    array[i + 1] = temp;
                 }
             }
-        } while (! noChanges);
-
-        return arr;
+        } while (!isSorted);
     }
 
-    public static int[] sortedSelection(int[] arr) {
+    public static void selectionSortArray(int[] array) {
 
-        for (int i = 0; i < arr.length; i++) {
-            for (int j = i; j < arr.length; j++) {
+        for (int i = 0; i < array.length; i++) {
+            for (int j = i; j < array.length; j++) {
 
-                int low = arr[i] ;
+                int low = array[i];
 
-                if (arr[j] < arr[i]) {
+                if (array[j] < array[i]) {
 
-                    arr[i] = arr[j];
-                    arr[j] = low;
-                    low = arr[i];
+                    array[i] = array[j];
+                    array[j] = low;
+                    low = array[i];
                 }
 
             }
         }
-
-        return arr;
-    }
-    public static void printInts(String heading, int[] arr) {
-        System.out.println(heading);
-
-        StringBuilder sb = new StringBuilder("{ ");
-
-        for (int i : arr) {
-            sb.append(i);
-            sb.append(", ");
-        }
-
-        sb.setLength(sb.length() -2);
-        sb.append(" }");
-
-        System.out.println(sb);
     }
 }

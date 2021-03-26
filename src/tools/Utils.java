@@ -1,6 +1,7 @@
 package tools;
 
 import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.Stream;
 
@@ -36,6 +37,20 @@ public class Utils {
 
             System.err.format("IOException: %s%n", e);
 
+        }
+    }
+
+
+    //Fisher–Yates shuffle
+    public static void shuffleArray(int[] array) {
+
+        Random random = ThreadLocalRandom.current();
+        for (int i = array.length - 1; i > 0; i--) {
+            int index = random.nextInt(i + 1);
+
+            int temp = array[index];
+            array[index] = array[i];
+            array[i] = temp;
         }
     }
 

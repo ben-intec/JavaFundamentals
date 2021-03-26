@@ -1,5 +1,6 @@
 package chapter7;
 
+//Opdracht 5
 public class Statistics {
     public static double average(int... values) {
         if (values == null || values.length == 0)
