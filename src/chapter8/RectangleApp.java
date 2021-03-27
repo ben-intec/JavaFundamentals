@@ -46,14 +46,7 @@ public class RectangleApp {
     }
 
     public static void printRectangle(Rectangle rectangle) {
-        System.out.printf(
-                "Rectangle with width: %d, height: %d at position (%d,%d).%n",
-                rectangle.getWidth(),
-                rectangle.getHeight(),
-                rectangle.getX(),
-                rectangle.getY()
-        );
-
+        System.out.println(rectangle);
         System.out.printf("Created %d rectangle%s!%n", getCount(), getCount() > 1 ? "s":"");
     }
 }

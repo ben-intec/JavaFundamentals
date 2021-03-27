@@ -1,5 +1,7 @@
 package chapter8;
 
+import java.text.DecimalFormat;
+
 public class Rectangle {
 
     //static variables
@@ -40,6 +42,7 @@ public class Rectangle {
     public static int getCount() {
         return count;
     }
+
     public void scale(float factor) {
         factor = Math.abs(factor);
         this.width *= factor;
@@ -47,8 +50,8 @@ public class Rectangle {
     }
 
     public void grow(int d) {
-        this.width = (this.width + d) > 0 ? (this.width + d) : this.width;
-        this.height = (this.height + d) > 0 ? (this.height + d) : this.height;
+        this.width = Math.max((this.width + d), 0);
+        this.height = Math.max((this.height + d), 0);
     }
 
     public double getPerimeter() {
@@ -95,5 +98,18 @@ public class Rectangle {
 
     public void setY(int y) {
         this.y = y;
+    }
+
+    @Override
+    public String toString() {
+        return String.format(
+                "Rectangle with width: %d, height: %d at position (%d, %d).%nPerimeter: %s\t\tArea: %s%n",
+                this.getWidth(),
+                this.getHeight(),
+                this.getX(),
+                this.getY(),
+                new DecimalFormat("#.##").format(this.getPerimeter()),
+                new DecimalFormat("#.##").format(this.getArea())
+        );
     }
 }
