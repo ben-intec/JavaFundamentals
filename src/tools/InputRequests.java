@@ -69,6 +69,8 @@ public class InputRequests {
             }
         }
 
+        scanner.nextLine(); //Finish the line because nextInt() doesn't consume line separators.
+
         return number;
     }
 
@@ -127,6 +129,8 @@ public class InputRequests {
                 number = scanner.nextLong();
             }
         }
+
+        scanner.nextLine(); //Finish the line because nextLong() doesn't consume line separators.
 
         return number;
     }
@@ -187,6 +191,8 @@ public class InputRequests {
             }
         }
 
+        scanner.nextLine(); //Finish the line because nextDouble() doesn't consume line separators.
+
         return number;
     }
 
@@ -246,6 +252,8 @@ public class InputRequests {
             }
         }
 
+        scanner.nextLine(); //Finish the line because nextFloat() doesn't consume line separators.
+
         return number;
     }
 
@@ -292,7 +300,6 @@ public class InputRequests {
 
         result = scanner.nextLine();
         if (predicate != null) {
-
             while (! predicate.test(result)) {
                 System.out.println(errorMessage);
                 result = scanner.nextLine();
