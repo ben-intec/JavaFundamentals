@@ -14,10 +14,6 @@ public class Rectangle {
     private int x;
     private int y;
 
-    //VS
-    //private int width, height, x, y;
-
-
     //Constructors
     public Rectangle() {
         this(1, 2);
