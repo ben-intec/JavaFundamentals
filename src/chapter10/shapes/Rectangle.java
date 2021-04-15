@@ -26,9 +26,9 @@ public class Rectangle extends Shape{
     }
 
     public Rectangle(int width, int height, int x, int y) {
+        super(x,y);
         this.setWidth(width);
         this.setHeight(height);
-        this.setPosition(x,y);
         count++;
     }
 
@@ -76,7 +76,7 @@ public class Rectangle extends Shape{
     @Override
     public String toString() {
         return String.format(
-                "%s with width: %d, height: %d at position (%d, %d).%nPerimeter: %s\t\tArea: %s",
+                "%n%s with width: %d, height: %d at position (%d, %d).%nPerimeter: %s\t\tArea: %s",
                 this.getClass().getSimpleName(),
                 this.getWidth(),
                 this.getHeight(),

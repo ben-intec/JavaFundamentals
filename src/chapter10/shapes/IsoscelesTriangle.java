@@ -1,5 +1,7 @@
 package chapter10.shapes;
 
+import java.text.DecimalFormat;
+
 public class IsoscelesTriangle extends Triangle{
     
     //STATIC VARIABLES
@@ -39,5 +41,19 @@ public class IsoscelesTriangle extends Triangle{
     public void setPerpendicular(int perpendicular) {
         super.setPerpendicular(perpendicular);
         super.setWidth(perpendicular * 2);
+    }
+    
+    @Override
+    public String toString() {
+        return String.format(
+                "%n%s with width: %d, height: %d at position (%d, %d).%nPerimeter: %s\t\tArea: %s",
+                this.getClass().getSimpleName(),
+                this.getWidth(),
+                this.getHeight(),
+                this.getX(),
+                this.getY(),
+                new DecimalFormat("#.##").format(this.getPerimeter()),
+                new DecimalFormat("#.##").format(this.getArea())
+        );
     }
 }

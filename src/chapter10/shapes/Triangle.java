@@ -1,5 +1,7 @@
 package chapter10.shapes;
 
+import java.text.DecimalFormat;
+
 public class Triangle extends Shape {
     
     //static variables
@@ -25,8 +27,8 @@ public class Triangle extends Shape {
     
     public Triangle(int width, int height, int perpendicular, int x, int y) {
         super(x, y);
-        this.width = width;
-        this.height = height;
+        this.setWidth(width);
+        this.setHeight(height);
         this.perpendicular = perpendicular;
         count++;
     }
@@ -42,7 +44,7 @@ public class Triangle extends Shape {
     }
     
     public void setWidth(int width) {
-        this.width = width;
+        this.width = Math.abs(width);
     }
     
     public int getHeight() {
@@ -50,7 +52,7 @@ public class Triangle extends Shape {
     }
     
     public void setHeight(int height) {
-        this.height = height;
+        this.height = Math.abs(height);
     }
     
     public int getPerpendicular() {
@@ -77,16 +79,28 @@ public class Triangle extends Shape {
     
     @Override
     double getPerimeter() {
-        if (perpendicular < 0)
+        if (perpendicular < 0 || perpendicular > width)
             return width + Math.hypot(height, perpendicular) + Math.hypot(height, perpendicular - width);
-        else if (perpendicular < width)
+        else
             return width + Math.hypot(height, perpendicular) + Math.hypot(height, width - perpendicular);
-        else // if (perpendicular > width)
-            return width + Math.hypot(height, perpendicular - width) + Math.hypot(height, perpendicular);
     }
     
     @Override
     double getArea() {
         return (this.width * this.height) / 2D;
+    }
+    @Override
+    public String toString() {
+        return String.format(
+                "%n%s with width: %d, height: %d, perpendicular: %d at position (%d, %d).%nPerimeter: %s\t\tArea: %s",
+                this.getClass().getSimpleName(),
+                this.getWidth(),
+                this.getHeight(),
+                this.getPerpendicular(),
+                this.getX(),
+                this.getY(),
+                new DecimalFormat("#.##").format(this.getPerimeter()),
+                new DecimalFormat("#.##").format(this.getArea())
+        );
     }
 }

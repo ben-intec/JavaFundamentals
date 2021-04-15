@@ -19,8 +19,8 @@ public class Circle extends Shape{
     }
 
     public Circle(int radius, int x, int y) {
+        super(x,y);
         this.setRadius(radius);
-        this.setPosition(x,y);
         count++;
     }
 
@@ -61,7 +61,7 @@ public class Circle extends Shape{
     @Override
     public String toString() {
         return String.format(
-                "Circle with radius %d at position (%d, %d)%nPerimeter: %s\t\tArea: %s%n",
+                "%nCircle with radius %d at position (%d, %d)%nPerimeter: %s\t\tArea: %s",
                 this.getRadius(),
                 this.getX(),
                 this.getY(),
