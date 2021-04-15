@@ -1,15 +1,13 @@
-package chapter8;
+package chapter10.shapes;
 
 import java.text.DecimalFormat;
 
-public class Circle {
+public class Circle extends Shape{
 //    VARIABLES
     public static final int ANGLES = 0;
     private static int count = 0;
 
     private int radius;
-    private int x;
-    private int y;
 
 //    CONSTRUCTORS
     public Circle() {
@@ -31,11 +29,6 @@ public class Circle {
     }
 
 //    METHODS
-    public void setPosition(int x, int y) {
-        this.setX(x);
-        this.setY(y);
-    }
-
     public double getPerimeter() {
         return 2 * Math.PI * radius;
     }
@@ -45,32 +38,16 @@ public class Circle {
     }
 
     public void scale(float factor) {
-        this.radius *= Math.abs(factor);
+        this.radius = (int) Math.max(this.radius * Math.abs(factor), 1);
     }
 
     public void grow(int d) {
-        this.radius = Math.max((this.radius + d), 0);
+        this.radius = Math.max((this.radius + d), 1);
     }
 
 //    GETTERS & SETTERS
     public static int getCount() {
         return count;
-    }
-
-    public int getX() {
-        return x;
-    }
-
-    public void setX(int x) {
-        this.x = x;
-    }
-
-    public int getY() {
-        return y;
-    }
-
-    public void setY(int y) {
-        this.y = y;
     }
 
     public int getRadius() {

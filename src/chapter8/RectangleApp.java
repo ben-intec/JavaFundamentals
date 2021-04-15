@@ -1,6 +1,8 @@
 package chapter8;
 
-import static chapter8.Rectangle.*;
+import chapter10.shapes.Rectangle;
+
+import static chapter10.shapes.Rectangle.*;
 
 public class RectangleApp {
     public static void main(String[] args) {

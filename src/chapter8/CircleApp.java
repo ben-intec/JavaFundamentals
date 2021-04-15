@@ -1,5 +1,7 @@
 package chapter8;
 
+import chapter10.shapes.Circle;
+
 public class CircleApp {
     public static void main(String[] args) {
         Circle circle1 = new Circle();

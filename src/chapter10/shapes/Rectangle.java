@@ -1,8 +1,8 @@
-package chapter8;
+package chapter10.shapes;
 
 import java.text.DecimalFormat;
 
-public class Rectangle {
+public class Rectangle extends Shape{
 
     //static variables
     public static final int ANGLES = 4;
@@ -11,8 +11,6 @@ public class Rectangle {
     //instance variables
     private int width;
     private int height;
-    private int x;
-    private int y;
 
     //Constructors
     public Rectangle() {
@@ -41,13 +39,13 @@ public class Rectangle {
 
     public void scale(float factor) {
         factor = Math.abs(factor);
-        this.width *= factor;
-        this.height *= factor;
+        this.width = (int) Math.max((this.width * factor), 1);
+        this.height = (int) Math.max((this.height * factor), 1);
     }
 
     public void grow(int d) {
-        this.width = Math.max((this.width + d), 0);
-        this.height = Math.max((this.height + d), 0);
+        this.width = Math.max((this.width + d), 1);
+        this.height = Math.max((this.height + d), 1);
     }
 
     public double getPerimeter() {
@@ -56,11 +54,6 @@ public class Rectangle {
 
     public double getArea() {
         return this.width * this.height;
-    }
-
-    public void setPosition(int x, int y) {
-        this.setX(x);
-        this.setY(y);
     }
 
     //Property Getters and Setters
@@ -80,26 +73,11 @@ public class Rectangle {
         this.height = Math.abs(height);
     }
 
-    public int getX() {
-        return x;
-    }
-
-    public void setX(int x) {
-        this.x = x;
-    }
-
-    public int getY() {
-        return y;
-    }
-
-    public void setY(int y) {
-        this.y = y;
-    }
-
     @Override
     public String toString() {
         return String.format(
-                "Rectangle with width: %d, height: %d at position (%d, %d).%nPerimeter: %s\t\tArea: %s%n",
+                "%s with width: %d, height: %d at position (%d, %d).%nPerimeter: %s\t\tArea: %s",
+                this.getClass().getSimpleName(),
                 this.getWidth(),
                 this.getHeight(),
                 this.getX(),
