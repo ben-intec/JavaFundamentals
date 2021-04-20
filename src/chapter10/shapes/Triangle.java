@@ -77,7 +77,7 @@ public class Triangle extends Shape {
         this.height = Math.max((this.height + d), 1);
     }
     
-    @Override
+    @Override //using Pythagoras' Theorem:  H² = A² + B²
     double getPerimeter() {
         if (perpendicular < 0 || perpendicular > width)
             return width + Math.hypot(height, perpendicular) + Math.hypot(height, perpendicular - width);
@@ -89,18 +89,44 @@ public class Triangle extends Shape {
     double getArea() {
         return (this.width * this.height) / 2D;
     }
+    
     @Override
     public String toString() {
-        return String.format(
-                "%n%s with width: %d, height: %d, perpendicular: %d at position (%d, %d).%nPerimeter: %s\t\tArea: %s",
-                this.getClass().getSimpleName(),
-                this.getWidth(),
-                this.getHeight(),
-                this.getPerpendicular(),
-                this.getX(),
-                this.getY(),
-                new DecimalFormat("#.##").format(this.getPerimeter()),
-                new DecimalFormat("#.##").format(this.getArea())
-        );
+        return "Triangle{" +
+                "width=" + width +
+                ", height=" + height +
+                ", perpendicular=" + perpendicular +
+                '}';
+    }
+    
+    //    @Override
+//    public String toString() {
+//        return String.format(
+//                "%n%s with width: %d, height: %d, perpendicular: %d at position (%d, %d).%nPerimeter: %s\t\tArea: %s",
+//                this.getClass().getSimpleName(),
+//                this.getWidth(),
+//                this.getHeight(),
+//                this.getPerpendicular(),
+//                this.getX(),
+//                this.getY(),
+//                new DecimalFormat("#.##").format(this.getPerimeter()),
+//                new DecimalFormat("#.##").format(this.getArea())
+//        );
+//    }
+    
+    @Override
+    public int hashCode() {
+        return super.hashCode() + 79 * getWidth() + 181 * getHeight() + 293 * getPerpendicular();
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (obj instanceof Triangle) {
+            Triangle other = (Triangle) obj;
+            return this.getHeight() == other.getHeight()
+                    && this.getWidth() == other.getWidth()
+                    && this.getPerpendicular() == other.getPerpendicular();
+        }
+        return false;
     }
 }

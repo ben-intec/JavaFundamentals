@@ -86,4 +86,18 @@ public class Rectangle extends Shape{
                 new DecimalFormat("#.##").format(this.getArea())
         );
     }
+    
+    @Override
+    public int hashCode() {
+        return super.hashCode() + 17 * getWidth() + 23 * getHeight();
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (obj instanceof Rectangle) {
+            Rectangle other = (Rectangle) obj;
+            return this.getHeight() == other.getHeight() && this.getWidth() == other.getWidth();
+        }
+        return false;
+    }
 }

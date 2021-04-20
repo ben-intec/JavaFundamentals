@@ -69,4 +69,18 @@ public class Circle extends Shape{
                 new DecimalFormat("#.##").format(this.getArea())
         );
     }
+    
+    @Override
+    public int hashCode() {
+        return super.hashCode() + 313 * getRadius();
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (obj instanceof Circle) {
+            Circle other = (Circle) obj;
+            return this.getRadius() == other.getRadius();
+        }
+        return false;
+    }
 }

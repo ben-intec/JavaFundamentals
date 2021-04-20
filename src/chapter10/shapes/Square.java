@@ -40,4 +40,19 @@ public class Square extends Rectangle {
         setSide(height);
     }
     
+    
+    @Override
+    public int hashCode() {
+        return super.hashCode() + 311 * getSide();
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (obj instanceof Square) {
+            Square other = (Square) obj;
+            return this.getSide() == other.getSide();
+        }
+        return false;
+    }
+    
 }

@@ -29,8 +29,8 @@ public class IsoscelesTriangle extends Triangle{
     public static int getCount() {
         return count;
     }
-    //OVERRIDES
     
+    //OVERRIDES
     @Override
     public void setWidth(int width) {
         super.setWidth(width);
