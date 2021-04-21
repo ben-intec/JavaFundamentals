@@ -10,7 +10,7 @@ public enum Color {
     
     public final int rgb;
     
-    private Color(int rgb) {
+    Color(int rgb) {
         this.rgb = rgb;
     }
     

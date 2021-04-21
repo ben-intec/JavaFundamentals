@@ -25,7 +25,7 @@ public enum Planet {
     public String toString() {
         DecimalFormat format = new DecimalFormat("0.##E0");
         return name().charAt(0) + name().substring(1).toLowerCase() +
-                       "is the " + ordinalNo(ordinal() +1) + " planet from the sun "+
+                       "is the " + ordinalNo(ordinal() + 1) + " planet from the sun "+
                        "at a distance of " + distance +
                        " km, and with a mass of " + format.format(mass) + " kg.";
     }

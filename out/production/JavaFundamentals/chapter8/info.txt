@@ -1,1 +1,0 @@
-Rectangle.class & Circle.class moved to chapter10.shapes
