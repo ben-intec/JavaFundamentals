@@ -58,15 +58,16 @@ public class TextApp {
         //predicate
         Predicate<String> containsE = s -> s.contains("e");
         Predicate<String> containsA = s -> s.contains("a");
+        Predicate<String> containsBoth = containsE.and(containsA);
 
         System.out.println("Contains e & a:");
-        printer.printFilteredWords(s -> (containsE.and(containsA)).test(s));
+        printer.printFilteredWords(containsBoth::test);
         System.out.println();
 
         //Function
         Function<String,String> func = s -> TextUtils.reverse(s.toUpperCase());
         System.out.println("Uppercase case :");
-        printer.printProcessedWords(s ->  func.apply(s));
+        printer.printProcessedWords(func::apply);
         System.out.println();
     }
 }
