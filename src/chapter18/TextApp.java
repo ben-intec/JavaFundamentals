@@ -1,6 +1,8 @@
 package chapter18;
 
 import java.math.BigDecimal;
+import java.util.function.Function;
+import java.util.function.Predicate;
 
 public class TextApp {
 
@@ -53,6 +55,18 @@ public class TextApp {
         printer.printSum(s -> new BigDecimal(TextPrinter.convertToASCII(s)));
         System.out.println();
 
+        //predicate
+        Predicate<String> containsE = s -> s.contains("e");
+        Predicate<String> containsA = s -> s.contains("a");
 
+        System.out.println("Contains e & a:");
+        printer.printFilteredWords(s -> (containsE.and(containsA)).test(s));
+        System.out.println();
+
+        //Function
+        Function<String,String> func = s -> TextUtils.reverse(s.toUpperCase());
+        System.out.println("Uppercase case :");
+        printer.printProcessedWords(s ->  func.apply(s));
+        System.out.println();
     }
 }
