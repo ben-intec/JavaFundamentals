@@ -9,6 +9,15 @@ public class Person {
     float weight;
     float length;
 
+    public Person(String firstName, String lastName, Gender gender, int age, float weight, float length) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.gender = gender;
+        this.age = age;
+        this.weight = weight;
+        this.length = length;
+    }
+
     public Person(String firstName, String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
