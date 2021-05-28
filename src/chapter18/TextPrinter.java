@@ -1,6 +1,7 @@
 package chapter18;
 
 import java.math.BigDecimal;
+import java.util.function.Consumer;
 
 public class TextPrinter {
 
@@ -8,6 +9,13 @@ public class TextPrinter {
 
     public TextPrinter(String sentence) {
         this.sentence = sentence;
+    }
+
+    public TextPrinter(String sentence, Consumer<String> consumer) {
+        this.sentence = sentence;
+        for (String word : sentence.split(" +")) {
+            consumer.accept(word);
+        }
     }
 
     public void printFilteredWords(WordFilter filter) {

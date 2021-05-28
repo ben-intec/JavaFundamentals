@@ -1,6 +1,7 @@
 package chapter18;
 
 import java.math.BigDecimal;
+import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Predicate;
 
@@ -69,5 +70,12 @@ public class TextApp {
         System.out.println("Uppercase case :");
         printer.printProcessedWords(func::apply);
         System.out.println();
+
+        //Consumer
+        Consumer<String> consumer = s -> System.out.println(s.toUpperCase());
+        TextPrinter printer2 =
+                new TextPrinter("Lorem ipsum dolor sit amet, consectetur adipiscing elit, " +
+                        "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                        consumer);
     }
 }
