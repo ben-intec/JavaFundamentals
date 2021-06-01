@@ -1,5 +1,7 @@
 package chapter19;
 
+import java.util.Objects;
+
 public class Person {
     public enum Gender{MALE,FEMALE,OTHER}
     String firstName;
@@ -73,6 +75,27 @@ public class Person {
 
     @Override
     public String toString() {
-        return String.format("%s %s", firstName, lastName);
+        return "Person[" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", gender=" + gender +
+                ", age=" + age +
+                ", weight=" + weight +
+                ", length=" + length +
+                ']';
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(firstName, lastName, gender, age, weight, length);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if(obj instanceof Person){
+            Person other = (Person)obj;
+            return this.toString().equals(other.toString());
+        }
+        return false;
     }
 }
