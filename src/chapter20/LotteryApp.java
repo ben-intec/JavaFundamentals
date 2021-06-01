@@ -9,7 +9,7 @@ import java.util.Set;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class LotteryApp {
-
+    //Opdracht 2A & 3
     public static void main(String[] args) {
         Set<Integer> userInputSet = new LinkedHashSet<>();
 //        Set<Integer> userInputSet = new HashSet<>();
