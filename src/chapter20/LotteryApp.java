@@ -33,9 +33,9 @@ public class LotteryApp {
         userInputSet.retainAll(lottery);
 
         System.out.println("the winning numbers are");
-        lottery.forEach(i -> System.out.print(i + " "));
+        System.out.println(lottery);
 
         System.out.println("Your winning numbers are");
-        userInputSet.forEach(i -> System.out.print(i + " "));
+        System.out.println(userInputSet);
     }
 }

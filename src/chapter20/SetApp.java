@@ -21,7 +21,7 @@ public class SetApp {
                 new Person("William", "Adama", MALE, 40, 88, 174),
                 new Person("Jean-Luc", "Picard", MALE, 49, 75, 175),
                 new Person("Malcolm", "Reynolds", MALE, 33, 85, 186),
-                new Person("Leia", "Organa", MALE, 19, 43, 157),
+                new Person("Leia", "Organa", FEMALE, 19, 43, 157),
                 new Person("Seven", "Of Nine", FEMALE, 20, 55, 173),
                 new Person("Number", "Six", FEMALE, 30, 61, 180),
                 new Person("River", "Tam", FEMALE, 18, 50, 166)
