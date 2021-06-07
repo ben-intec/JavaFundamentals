@@ -1,8 +1,12 @@
 package chapter19;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.Objects;
 
-public class Person {
+public class Person implements Comparable<Person> {
+
+
     public enum Gender{MALE,FEMALE,OTHER}
     String firstName;
     String lastName;
@@ -75,14 +79,22 @@ public class Person {
 
     @Override
     public String toString() {
-        return "Person[" +
+        return  firstName  +
+                " " + lastName +
+                " - " + age ;
+        /*return "Person[" +
                 "firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", gender=" + gender +
                 ", age=" + age +
                 ", weight=" + weight +
                 ", length=" + length +
-                ']';
+                ']';*/
+    }
+
+    @Override
+    public int compareTo(@NotNull Person other) {
+        return this.lastName.compareTo(other.lastName);
     }
 
     @Override
