@@ -1,7 +1,8 @@
 package practicetest.entities.plant_entities;
 
 public class Weed extends Plant{
-    double area;
+
+    private double area;
 
     public Weed(String name) {
         super(name);

@@ -1,8 +1,9 @@
 package practicetest.entities.plant_entities;
 
 public class Bush extends Plant{
-    String fruit;
-    LeafType leafType;
+
+    private String fruit;
+    private LeafType leafType;
 
     public Bush(String name) {
         super(name);

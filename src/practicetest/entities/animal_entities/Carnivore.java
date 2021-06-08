@@ -2,7 +2,7 @@ package practicetest.entities.animal_entities;
 
 public class Carnivore extends Animal{
 
-    double maxFoodSize;
+    private double maxFoodSize;
 
     public Carnivore(String name) {
         super(name);

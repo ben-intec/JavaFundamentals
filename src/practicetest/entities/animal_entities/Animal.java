@@ -1,10 +1,10 @@
 package practicetest.entities.animal_entities;
 
 public class Animal {
-    String name;
-    double weight;
-    double height;
-    double length;
+    protected String name;
+    protected double weight;
+    protected double height;
+    protected double length;
 
     public Animal(String name) {
         this.name = name;

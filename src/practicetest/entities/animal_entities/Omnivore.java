@@ -7,8 +7,8 @@ import java.util.Set;
 
 public class Omnivore extends Animal{
 
-    Set<Plant> plantDiet;
-    double maxFoodSize;
+    private Set<Plant> plantDiet;
+    private double maxFoodSize;
 
 
     public Omnivore(String name) {

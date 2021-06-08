@@ -7,7 +7,7 @@ import java.util.Set;
 
 public class Herbivore extends Animal{
 
-    Set<Plant> plantDiet;
+    private Set<Plant> plantDiet;
 
     public Herbivore(String name) {
         super(name);

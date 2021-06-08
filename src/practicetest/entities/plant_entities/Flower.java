@@ -1,7 +1,8 @@
 package practicetest.entities.plant_entities;
 
 public class Flower extends Plant{
-    Scent smell;
+
+    private Scent smell;
 
     public Flower(String name) {
         super(name);

@@ -1,8 +1,8 @@
 package practicetest.entities.plant_entities;
 
 public class Plant {
-    String name;
-    double height;
+    protected String name;
+    protected double height;
 
     public Plant(String name) {
         this.name = name;
