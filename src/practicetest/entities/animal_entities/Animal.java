@@ -1,13 +1,16 @@
 package practicetest.entities.animal_entities;
 
+import practicetest.entities.plant_entities.Plant;
+
 public class Animal {
+
     protected String name;
     protected double weight;
     protected double height;
     protected double length;
 
     public Animal(String name) {
-        this.name = name;
+        this(name, 0, 0, 0);
     }
 
     public Animal(String name, double weight, double height, double length) {
@@ -43,5 +46,13 @@ public class Animal {
 
     public void setLength(double length) {
         this.length = length;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj instanceof Animal) {
+            return this.name.equals(((Animal)obj).name);
+        }
+        return false;
     }
 }

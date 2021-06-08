@@ -32,9 +32,9 @@ public class Bush extends Plant{
     @Override
     public String toString() {
         return "Bush[" +
-                "fruit='" + fruit + '\'' +
+                "name='" + name + '\'' +
+                ", fruit='" + fruit + '\'' +
                 ", leafType=" + leafType +
-                ", name='" + name + '\'' +
                 (height != 0 ?", height=" + height : "") +
                 ']';
     }

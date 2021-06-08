@@ -23,8 +23,8 @@ public class Flower extends Plant{
     @Override
     public String toString() {
         return "Flower[" +
-                "smell=" + smell +
-                ", name='" + name + '\'' +
+                "name='" + name + '\'' +
+                ", smell=" + smell +
                 (height != 0 ?", height=" + height : "") +
                 ']';
     }
