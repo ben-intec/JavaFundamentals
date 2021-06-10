@@ -57,6 +57,8 @@ public class ForestNotebook {
     }
 
     public void addAnimal(Animal animal) {
+        if(animals.contains(animal)) return;
+
         if (animal instanceof Carnivore)
             carnivores.add((Carnivore) animal);
         if (animal instanceof Herbivore)
@@ -65,14 +67,14 @@ public class ForestNotebook {
             omnivores.add((Omnivore) animal);
 
         animals.add(animal);
-        animals = animals.stream().distinct().collect(Collectors.toList());
-        animalCount = animals.size();
+        animalCount++;
     }
 
     public void addPlant(Plant plant) {
+        if (plants.contains(plant)) return;
+
         plants.add(plant);
-        plants = plants.stream().distinct().collect(Collectors.toList());
-        plantCount = plants.size();
+        plantCount++;
     }
 
     public void printNotebook() {

@@ -1,7 +1,5 @@
 package practicetest.entities.animal_entities;
 
-import practicetest.entities.plant_entities.Plant;
-
 public class Animal {
 
     protected String name;

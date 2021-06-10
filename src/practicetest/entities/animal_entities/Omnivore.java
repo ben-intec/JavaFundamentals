@@ -10,7 +10,6 @@ public class Omnivore extends Animal{
     private Set<Plant> plantDiet;
     private double maxFoodSize;
 
-
     public Omnivore(String name) {
         super(name);
     }
