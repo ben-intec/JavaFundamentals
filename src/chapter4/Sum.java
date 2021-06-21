@@ -11,6 +11,8 @@ public class Sum {
         int a = InputRequests.requestInt(scanner, "Enter a number:");
         int b = InputRequests.requestInt(scanner, "Enter another number:");
 
+
+
         System.out.printf("the sum of your numbers is %d", a+b);
         scanner.close();
     }
