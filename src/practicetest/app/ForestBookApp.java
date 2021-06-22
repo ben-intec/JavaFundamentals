@@ -6,12 +6,11 @@ import practicetest.service.ForestNotebook;
 
 import java.util.List;
 import java.util.Set;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class ForestBookApp {
 
     public static void main(String[] args) {
+
         ForestNotebook notebook = new ForestNotebook();
 
         Tree acacia = new Tree("Acacia", 3.5);
@@ -28,9 +27,8 @@ public class ForestBookApp {
         nettle.setArea(34);
 
         System.out.println("Plants");
-        List<Plant> plants = Stream
-                .of(acacia, bonsai, daisy, nettle, oleander)
-                .collect(Collectors.toList());
+        List<Plant> plants = List
+                .of(acacia, bonsai, daisy, nettle, oleander);
 
         plants.forEach(System.out::println);
         plants.forEach(notebook::addPlant);
@@ -62,9 +60,8 @@ public class ForestBookApp {
 
         System.out.println();
         System.out.println("Animals");
-        List<Animal> animals = Stream
-                .of(cow, giraffe, moose, boar, grizzly, turtle, tiger, anteater, penguin)
-                .collect(Collectors.toList());
+        List<Animal> animals = List
+                .of(cow, giraffe, moose, boar, grizzly, turtle, tiger, anteater, penguin);
         animals.forEach(System.out::println);
         animals.forEach(notebook::addAnimal);
 
